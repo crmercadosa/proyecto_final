@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="UpdateUserDialog"
+        title="Actualizar Usuario"
+        icon="sap-icon://add"
+        type="Message"
+        class="customDialogSize"
+        draggable="true"
+        resizable="true"
+    >
+        <VBox id="UpdateUserDialogVbox" class="sapUiSmallMargin">
+            <Input id="inputUserId2" placeholder="ID de Usuario" enabled="false"/>
+
+            <Input id="inputUsername2" placeholder="Nombre Completo"/>
+
+            <Input id="inputEmail2" type="Email" placeholder="Correo Electrónico"/>
+
+            <DatePicker id="inputBirthdayDate2" placeholder="Fecha de nacimiento (dd/mm/aa)"/>
+
+            <Input id="inputCompanyName2" placeholder="Compañía"/>
+
+            <Input id="inputPhoneNumber2" placeholder="Número telefónico"/>
+
+            <Input id="inputDepartment2" placeholder="Departamento"/>
+
+            <Input id="inputFunction2" placeholder="Función que ejerce"/>
+
+            <ComboBox id="comboBoxRoles2" items="{/roles}" selectionChange="onRoleSelected" placeholder="Selecciona un Rol">
+                <core:Item id="RoleItem2" key="{ROLEID}" text="{ROLENAME}" />
+            </ComboBox>
+
+            <VBox id="selectedRolesVBox2" class="sapUiSmallMarginTop">
+            </VBox>
+
+        </VBox>
+
+        <beginButton>
+            <Button id="EditUser" text="Actualizar" type="Emphasized" press="onUpdateSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button id="CancelEditUser" text="Cancelar" press="onCloseUpdateDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

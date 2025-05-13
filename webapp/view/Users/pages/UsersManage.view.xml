@@ -1,0 +1,103 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Users.pages.UsersManage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+>
+
+    <m:Toolbar id="UsersManageToolBar" design="Transparent" class="customUserToolbar">
+        <m:Button id="CreateUser" text="Crear" press="onCreate" icon="sap-icon://add" type="Accept"/>
+        <m:Button id="UpdateUser" text="Editar" press="onUpdate" icon="sap-icon://edit" type="Emphasized"/>
+        <m:Button id="DeleteUser" text="Eliminar" press="onDelete" icon="sap-icon://delete" type="Reject"/>
+
+
+        <m:SearchField 
+            id="SearchUserField" 
+            width="25rem"
+            placeholder="Buscar usuario..."
+            liveChange="onSearchUser" 
+        />
+    </m:Toolbar>
+
+    <tl:Table id="IdTable1UsersManageTable"
+            rows="{/value/0/users}"
+            selectionMode="Single"
+            alternateRowColors="true"
+            selectionBehavior="RowOnly"
+            rowSelectionChange="onUserRowSelected"
+            enableSelectAll="false"
+            enableColumnReordering="true"
+            rowActionCount="2"
+            busyIndicatorDelay="0"
+            visibleRowCount="15">
+
+        <tl:rowMode>
+            
+        </tl:rowMode>
+
+         <tl:columns>
+            <tl:Column id="IdColumnUserId" sortProperty="USERID" width="5rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelUserId" text="USERID" />
+                <tl:template>
+                    <m:Text id="IdTextUserId" text="{USERID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+            <tl:Column id="IdColumnUserName" sortProperty="USERNAME" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelUserName" text="USERNAME" />
+                <tl:template>
+                    <m:Text id="IdTextUserName" text="{USERNAME}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnBirthdayDate" sortProperty="BIRTHDAYDATE" width="9rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelBirthdayDate" text="BIRTHDAYDATE" />
+                <tl:template>
+                    <m:Text id="IdTextBirthdayDate" text="{BIRTHDAYDATE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnCompanyName" sortProperty="COMPANYNAME" width="12rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelCompanyName" text="COMPANYNAME" />
+                <tl:template>
+                    <m:Text id="IdTextCompanyName" text="{COMPANYNAME}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnEmail" sortProperty="EMAIL" width="15rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelEmail" text="EMAIL" />
+                <tl:template>
+                    <m:Text id="IdTextEmail" text="{EMAIL}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnPhoneNumber" sortProperty="PHONENUMBER" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelPhoneNumber" text="PHONENUMBER" />
+                <tl:template>
+                    <m:Text id="IdTextPhoneNumber" text="{PHONENUMBER}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnDepartment" sortProperty="DEPARTMENT" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelDepartment" text="DEPARTMENT" />
+                <tl:template>
+                    <m:Text id="IdTextDepartment" text="{DEPARTMENT}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnFunction" sortProperty="FUNCTION" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelFunction" text="FUNCTION" />
+                <tl:template>
+                    <m:Text id="IdTextFunction" text="{FUNCTION}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnRoles" sortProperty="ROLES" width="12rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelRoles" text="ROLES" />
+                <tl:template>
+                    <m:Text id="IdTextRoles" text="{path: 'ROLES', formatter: '.formatRoles'}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+        </tl:columns>
+    </tl:Table>
+</mvc:View>

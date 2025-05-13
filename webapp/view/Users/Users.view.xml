@@ -1,0 +1,57 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Users"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+>
+    <tnt:ToolPage id="IdToolPage1Users" visible="true">
+
+        <tnt:header>
+            <f:ShellBar
+                id="IdShellBar1Users"
+                title="SECURITY"
+                homeIcon="./resources/images/logo.png"
+                showMenuButton="true"
+                menuButtonPressed="onMenuButtonPress"
+            >
+            <f:profile>
+                <m:Avatar id="IdAvatar1Usuarios" initials="UI" press="onAvatarPress"/>
+            </f:profile>
+
+            <m:Popover id="profilePopover" placement="Bottom" showHeader="false">
+                <m:Button id="IdProfileLogoutButton" text="Cerrar sesión" press="onLogoutPress"/>
+             </m:Popover>
+
+            </f:ShellBar>
+        </tnt:header>        
+
+        <tnt:sideContent>
+			<core:Fragment fragmentName="com.inv.sapfioriwebinvestments.view.Users.components.SideNavigation" type="XML" />
+	    </tnt:sideContent>
+
+        <tnt:mainContents>
+            <m:NavContainer id="IdNavContainer1Users" initialPage="page20">
+                <m:pages>
+                <!-- Aquí se agregarán las páginas que se abrirán dentro de este contenedor -->
+                    <!--(Page20) Gestión de usuarios (Principal) -->
+                    <m:Page id="page20" title="Usuarios">
+                        <m:ScrollContainer id="ScrollContainer20Users" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView20UsersManageView" viewName="com.inv.sapfioriwebinvestments.view.Users.pages.UsersManage"/>
+                        </m:ScrollContainer>
+                    </m:Page>
+
+                    <m:Page id="page30" title="Roles">
+                        <m:ScrollContainer id="ScrollContainer30Roles" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView30RolesManageView" viewName="com.inv.sapfioriwebinvestments.view.Users.pages.RolesManage"/>
+                        </m:ScrollContainer>
+                    </m:Page>
+
+                </m:pages>
+            </m:NavContainer>
+        </tnt:mainContents>
+
+
+    </tnt:ToolPage>
+</mvc:View>

@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="CreateUserDialog"
+        title="Crear Nuevo Usuario"
+        icon="sap-icon://add"
+        type="Message"
+        class="customDialogSize"
+        draggable="true"
+        resizable="true"
+    >
+        <VBox id="CreateUserDialogVbox" class="sapUiSmallMargin">
+            <Input id="inputUserId" placeholder="ID de Usuario"/>
+
+            <Input id="inputUsername" placeholder="Nombre Completo"/>
+
+            <Input id="inputEmail" type="Email" placeholder="Correo Electrónico"/>
+
+            <DatePicker id="inputBirthdayDate" placeholder="Fecha de nacimiento"/>
+
+            <Input id="inputCompanyName" placeholder="Compañía"/>
+
+            <Input id="inputPhoneNumber" placeholder="Número telefónico"/>
+
+            <Input id="inputDepartment" placeholder="Departamento"/>
+
+            <Input id="inputFunction" placeholder="Función que ejerce"/>
+
+            <ComboBox id="comboBoxRoles" items="{/roles}" selectionChange="onRoleSelected" placeholder="Selecciona un Rol">
+                <core:Item id="RoleItem" key="{ROLEID}" text="{ROLENAME}" />
+            </ComboBox>
+
+            <VBox id="selectedRolesVBox" class="sapUiSmallMarginTop">
+            </VBox>
+
+        </VBox>
+
+        <beginButton>
+            <Button id="SaveNewUser" text="Crear" type="Emphasized" press="onCreateUserSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button id="CancelNewUser" text="Cancelar" press="onCloseCreateUserDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

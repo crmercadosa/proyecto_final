@@ -1,0 +1,45 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Users.pages.RolesManage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+>
+
+     <m:Toolbar id="RolesManageToolBar" design="Transparent" >
+        <m:Button id="CreateRole" text="Crear" press="onCreate" type="Accept"/>
+        <m:Button id="UpdateRole" text="Actualizar" press="onUpdate" type="Emphasized"/>
+        <m:Button id="DeleteRole" text="Eliminar" press="onDelete" type="Reject"/>
+
+        <m:ToolbarSpacer id="IdRoleSpacer" />
+
+        <m:SearchField 
+            id="SearchRoleField" 
+            width="20rem"
+            placeholder="Buscar roles..."
+            liveChange="onSearchRole" 
+        />
+
+    </m:Toolbar>
+
+    <tl:Table id="IdTable1RolesManageTable"
+              rows="{/value/0/data/0/dataRes}"
+              selectionMode="Single"
+              alternateRowColors="true"
+              selectionBehavior="RowOnly"
+              enableSelectAll="false"
+              enableColumnReordering="true"
+              rowActionCount="2"
+              busyIndicatorDelay="0"
+              >
+
+         <tl:columns>
+            <tl:Column id="IdColumnRoleId" sortProperty="RoleID" width="5rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelRoleId" text="RoleID" />
+                <tl:template>
+                    <m:Text id="IdTextRoleIdt" text="{RoleID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+        </tl:columns>
+    </tl:Table>
+</mvc:View>

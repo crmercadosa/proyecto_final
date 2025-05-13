@@ -1,0 +1,143 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.inv.sapfioriwebinvestments",
+    "type": "application",
+    "i18n": {
+        "bundleName": "com.inv.sapfioriwebinvestments.i18n.i18n",
+        "fallbackLocale": "es_MX",
+        "supportedLocales": [
+          "es_MX"
+        ]
+    },  
+    "applicationVersion": {
+      "version": "1.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.16.3",
+      "toolsId": "efb808d3-1cc8-44ff-8f49-48712711efa0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.132.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.core": {},
+        "sap.tnt": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+        "i18n": {
+            "type": "sap.ui.model.resource.ResourceModel",
+            "settings": {
+              "async": true,
+              "bundleName": "com.inv.sapfioriwebinvestments.i18n.i18n",
+              "fallbackLocale": "es_MX",
+              "supportedLocales": [
+                "es_MX"
+              ]
+            }
+          }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.inv.sapfioriwebinvestments.view",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "RouteLogin",
+          "pattern": "login",
+          "target": ["TargetLogin"]
+        },
+        {
+          "name": "RouteMain",
+          "pattern": "home",
+          "target": ["TargetMain"]
+        },
+        {
+          "name": "RouteUsers",
+          "pattern": "users",
+          "target": ["TargetUsers"]
+        }
+      ],
+      "targets": {
+        "TargetLogin": {
+          "viewId": "Login",
+          "viewName": "Login",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewlevel": 1,
+          "path": "com.inv.sapfioriwebinvestments.view.login",
+          "viewPath": "com.inv.sapfioriwebinvestments.view.login"
+        },
+        "TargetMain": {
+          "viewId": "Main",
+          "viewName": "Main",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewlevel": 2
+        },
+        "TargetUsers": {
+          "viewId": "Users",
+          "viewName": "Users",
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewlevel": 3,
+          "path": "com.inv.sapfioriwebinvestments.view.users",
+          "viewPath": "com.inv.sapfioriwebinvestments.view.users"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.inv.sapfioriwebinvestments.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  }
+}
+    

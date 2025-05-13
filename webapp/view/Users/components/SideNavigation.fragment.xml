@@ -1,0 +1,16 @@
+<SideNavigation
+    id="IdSideNavigation1Users"
+    xmlns="sap.tnt"
+    expanded="true"
+    selectedKey="{usersNavModel>/selectedKey}"
+    itemSelect="onItemSelect"
+>
+    <NavigationList id="IdNavigationList1Users" items="{path: 'usersNavModel>/navigation'}">
+        <NavigationListItem
+            id="IdNavigationListItem1Users"
+            text="{usersNavModel>title}"
+            icon="{usersNavModel>icon}"
+            key="{usersNavModel>key}"
+        />
+    </NavigationList>
+</SideNavigation>

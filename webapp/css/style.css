@@ -1,0 +1,26 @@
+/* Enter your custom styles here */
+
+.customUserToolbar {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.customRoleToolbar {
+    margin-top: 1rem;
+}
+
+.customUserTable {
+    margin-top: 1rem;
+}
+
+.customUserButton{
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    height: auto;
+}
+
+.customDialogSize {
+    width: 30rem;
+    max-width: 90%;
+    min-width: 25rem;
+}

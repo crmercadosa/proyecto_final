@@ -1,0 +1,123 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Catalogs.pages.CatalogsManage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+>
+
+    <m:Toolbar id="CatalogsManageToolBar" design="Transparent" class="customUserToolbar">
+        <m:Button id="CreateCatalog" text="Crear" press="onCreate" icon="sap-icon://add" type="Accept"/>
+        <m:Button id="UpdateCatalog" text="Editar" press="onUpdate" icon="sap-icon://edit" type="Emphasized"/>
+        <m:Button id="DeleteCatalog" text="Eliminar" press="onDelete" icon="sap-icon://delete" type="Reject"/>
+
+
+        <m:SearchField 
+            id="SearchCatalogField" 
+            width="25rem"
+            placeholder="Buscar catálogo..."
+            liveChange="onSearchCatalog" 
+        />
+
+        <m:Button id="RefreshCatalogTable" press="onRefresh" icon="sap-icon://restart" type="Transparent" tooltip="Refrescar tabla"/>
+
+    </m:Toolbar>
+
+    <tl:Table id="IdTable1CatalogsManageTable"
+            rows="{/value/0/labels}"
+            selectionMode="Single"
+            alternateRowColors="true"
+            selectionBehavior="RowOnly"
+            rowSelectionChange="onCatalogRowSelected"
+            enableSelectAll="false"
+            enableColumnReordering="true"
+            rowActionCount="2"
+            busyIndicatorDelay="0"
+            rowMode="{ui>/rowMode}">
+
+        <tl:columns>
+            <tl:Column id="IdColumnCompanyId" sortProperty="COMPANYID" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelCompanyId" text="COMPANYID" />
+                <tl:template>
+                    <m:Text id="IdTextCompanyId" text="{COMPANYID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnCediId" sortProperty="CEDIID" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelCediId" text="CEDIID" />
+                <tl:template>
+                    <m:Text id="IdTextCediId" text="{CEDIID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnLabelId" sortProperty="LABELID" width="7rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelLabelId" text="LABELID" />
+                <tl:template>
+                    <m:Text id="IdTextLabelId" text="{LABELID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnLabel" sortProperty="LABEL" width="8rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelLabel" text="LABEL" />
+                <tl:template>
+                    <m:Text id="IdTextLabel" text="{LABEL}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnIndex" sortProperty="INDEX" width="8rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelIndex" text="INDEX" />
+                <tl:template>
+                    <m:Text id="IdTextIndex" text="{INDEX}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnCollection" sortProperty="COLLECTION" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelCollection" text="COLLECTION" />
+                <tl:template>
+                    <m:Text id="IdTextCollection" text="{COLLECTION}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnSection" sortProperty="SECTION" width="7rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelSection" text="SECTION" />
+                <tl:template>
+                    <m:Text id="IdTextSection" text="{SECTION}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnSequence" sortProperty="SEQUENCE" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelSequence" text="SEQUENCE" />
+                <tl:template>
+                    <m:Text id="IdTextSequence" text="{SEQUENCE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnImage" sortProperty="IMAGE" width="12rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelImage" text="IMAGE" />
+                <tl:template>
+                    <m:Text id="IdTextImage" text="{IMAGE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnDescriptionCatalog" sortProperty="DESCRIPTION" width="auto" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelDescriptionCatalog" text="DESCRIPTION" />
+                <tl:template>
+                    <m:Text id="IdTextDescriptionCatalog" text="{DESCRIPTION}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+        </tl:columns>
+
+        <tl:footer>
+            <m:OverflowToolbar id="OverFlowCatalogsManage">
+                <m:Label id="OverflowLabelCatalogsManage" text="Modo de filas" />
+                <m:SegmentedButton selectedKey="{ui>/rowMode}" id="rowCatalogsModeSelector">
+                    <m:items>
+                        <m:SegmentedButtonItem id="IdCatalogsFixedButton" key="Fixed" icon="sap-icon://locked" />
+                        <m:SegmentedButtonItem id="IdCatalogsInteracctiveButton" key="Interactive" icon="sap-icon://resize-vertical" />
+                    </m:items>
+                </m:SegmentedButton>
+            </m:OverflowToolbar>
+        </tl:footer>
+
+    </tl:Table>
+</mvc:View>

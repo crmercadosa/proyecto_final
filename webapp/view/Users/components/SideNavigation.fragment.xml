@@ -1,7 +1,7 @@
 <SideNavigation
     id="IdSideNavigation1Users"
     xmlns="sap.tnt"
-    expanded="true"
+    expanded="false"
     selectedKey="{usersNavModel>/selectedKey}"
     itemSelect="onItemSelect"
 >

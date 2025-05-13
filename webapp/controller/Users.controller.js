@@ -10,7 +10,8 @@ sap.ui.define([
             var oModel = new JSONModel();
             oModel.loadData("./resources/jsons/securityNavItems.json"); 
             this.getView().setModel(oModel, "usersNavModel");
-             // También podrías manejar el estado inicial del NavContainer aquí si es necesario
+            
+            // También podrías manejar el estado inicial del NavContainer aquí si es necesario
             this.oNavContainer = this.byId("IdNavContainer1Users");
 
         },
@@ -29,6 +30,12 @@ sap.ui.define([
                     break;
                 case "page30":
                     this.oNavContainer.to(this.byId("page30"));
+                    break;
+                case "page40":
+                    this.oNavContainer.to(this.byId("page40"));
+                    break;
+                case "page50":
+                    this.oNavContainer.to(this.byId("page50"));
                     break;
                 // Agregar más casos si tienes más páginas
             }

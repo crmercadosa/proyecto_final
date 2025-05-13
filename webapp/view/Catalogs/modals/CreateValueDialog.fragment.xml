@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="CreateValueDialog"
+        title="Crear Valor del catálogo"
+        icon="sap-icon://add"
+        type="Message"
+        class="customDialogSize"
+        draggable="true"
+        resizable="true"
+    >
+        <VBox id="CreateValueDialogVbox" class="sapUiSmallMargin">
+            <Input id="inputValueCompanyId" placeholder="ID de la compañia"/>
+
+            <Input id="inputValueCediId" placeholder="ID del cedi"/>
+
+            <Input id="inputValueLabelId" placeholder="ID del catálogo al que pertenece"/>
+
+            <Input id="inputValueId" placeholder="ID del valor"/>
+
+            <Input id="inputValue" placeholder="Nombre del valor"/>
+
+            <Input id="inputAlias" placeholder="Alias del valor"/>
+
+            <Input id="inputValueSequence" placeholder="Secuencia"/>
+            
+            <Input id="inputValueImage" placeholder="Url de la imagen"/>
+            
+            <Input id="inputValueDescription" placeholder="Descripción del valor"/>
+
+        </VBox>
+
+        <beginButton>
+            <Button id="SaveNewValue" text="Crear" type="Emphasized" press="onCreateValueSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button id="CancelNewValue" text="Cancelar" press="onCloseCreateValueDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

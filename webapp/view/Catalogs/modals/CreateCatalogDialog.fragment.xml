@@ -1,0 +1,42 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="CreateCatalogDialog"
+        title="Crear Catálogo"
+        icon="sap-icon://add"
+        type="Message"
+        class="customDialogSize"
+        draggable="true"
+        resizable="true"
+    >
+        <VBox id="CreateCatalogDialogVbox" class="sapUiSmallMargin">
+            <Input id="inputCompanyId" placeholder="ID de la compañia"/>
+
+            <Input id="inputCediId" placeholder="ID del cedi"/>
+
+            <Input id="inputLabelId" placeholder="ID del catálogo"/>
+
+            <Input id="inputLabel" placeholder="Nombre del catálogo"/>
+
+            <Input id="inputIndex" placeholder="Index"/>
+
+            <Input id="inputCollection" placeholder="Colecciones"/>
+
+            <Input id="inputSection" placeholder="Sección"/>
+
+            <Input id="inputSequence" placeholder="Secuencia"/>
+            
+            <Input id="inputImage" placeholder="Url de la imagen"/>
+            
+            <Input id="inputDescription" placeholder="Descripción del catálogo"/>
+
+        </VBox>
+
+        <beginButton>
+            <Button id="SaveNewCatalog" text="Crear" type="Emphasized" press="onCreateCatalogSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button id="CancelNewCatalog" text="Cancelar" press="onCloseCreateCatalogDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

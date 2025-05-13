@@ -1,0 +1,116 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Catalogs.pages.ValuesManage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+>
+
+    <m:Toolbar id="ValuesManageToolBar" design="Transparent" class="customUserToolbar">
+        <m:Button id="CreateValue" text="Crear" press="onCreate" icon="sap-icon://add" type="Accept"/>
+        <m:Button id="UpdateValue" text="Editar" press="onUpdate" icon="sap-icon://edit" type="Emphasized"/>
+        <m:Button id="DeleteValue" text="Eliminar" press="onDelete" icon="sap-icon://delete" type="Reject"/>
+
+
+        <m:SearchField 
+            id="SearchValueField" 
+            width="25rem"
+            placeholder="Buscar valores de los catálogos..."
+            liveChange="onSearchValue" 
+        />
+
+        <m:Button id="RefreshValueTable" press="onRefresh" icon="sap-icon://restart" type="Transparent" tooltip="Refrescar tabla"/>
+
+    </m:Toolbar>
+
+    <tl:Table id="IdTable1ValuesManageTable"
+            rows="{/value/0/values}"
+            selectionMode="Single"
+            alternateRowColors="true"
+            selectionBehavior="RowOnly"
+            rowSelectionChange="onValueRowSelected"
+            enableSelectAll="false"
+            enableColumnReordering="true"
+            rowActionCount="2"
+            busyIndicatorDelay="0"
+            rowMode="{ui>/rowMode}">
+
+        <tl:columns>
+            <tl:Column id="IdColumnValueCompanyId" sortProperty="COMPANYID" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueCompanyId" text="COMPANYID" />
+                <tl:template>
+                    <m:Text id="IdTextValueCompanyId" text="{COMPANYID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValueCediId" sortProperty="CEDIID" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueCediId" text="CEDIID" />
+                <tl:template>
+                    <m:Text id="IdTextValueCediId" text="{CEDIID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValueLabelId" sortProperty="LABELID" width="7rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueLabelId" text="LABELID" />
+                <tl:template>
+                    <m:Text id="IdTextValueLabelId" text="{LABELID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValueId" sortProperty="VALUEID" width="8rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueId" text="VALUEID" />
+                <tl:template>
+                    <m:Text id="IdTextValueId" text="{VALUEID}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValue" sortProperty="VALUE" width="8rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValue" text="VALUE" />
+                <tl:template>
+                    <m:Text id="IdTextValue" text="{VALUE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnAlias" sortProperty="ALIAS" width="10rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelAlias" text="ALIAS" />
+                <tl:template>
+                    <m:Text id="IdTextAlias" text="{ALIAS}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValueSequence" sortProperty="SEQUENCE" width="6rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueSequence" text="SEQUENCE" />
+                <tl:template>
+                    <m:Text id="IdTextValueSequence" text="{SEQUENCE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnValueImage" sortProperty="IMAGE" width="12rem" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelValueImage" text="IMAGE" />
+                <tl:template>
+                    <m:Text id="IdTextValueImage" text="{IMAGE}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
+            <tl:Column id="IdColumnDescriptionValue" sortProperty="DESCRIPTION" width="auto" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelDescriptionValue" text="DESCRIPTION" />
+                <tl:template>
+                    <m:Text id="IdTextDescriptionValue" text="{DESCRIPTION}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+        </tl:columns>
+
+        <tl:footer>
+            <m:OverflowToolbar id="OverFlowValuesManage">
+                <m:Label id="OverflowLabelValuesManage" text="Modo de filas" />
+                <m:SegmentedButton selectedKey="{ui>/rowMode}" id="rowValuesModeSelector">
+                    <m:items>
+                        <m:SegmentedButtonItem id="IdValuesFixedButton" key="Fixed" icon="sap-icon://locked" />
+                        <m:SegmentedButtonItem id="IdValuesInteracctiveButton" key="Interactive" icon="sap-icon://resize-vertical" />
+                    </m:items>
+                </m:SegmentedButton>
+            </m:OverflowToolbar>
+        </tl:footer>
+
+    </tl:Table>
+</mvc:View>

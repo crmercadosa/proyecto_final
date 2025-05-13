@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="UpdateValueDialog"
+        title="Actualizar Valor del catálogo"
+        icon="sap-icon://edit"
+        type="Message"
+        class="customDialogSize"
+        draggable="true"
+        resizable="true"
+    >
+        <VBox id="UpdateValueDialogVbox" class="sapUiSmallMargin">
+            <Input id="inputValueCompanyId2" placeholder="ID de la compañia"/>
+
+            <Input id="inputValueCediId2" placeholder="ID del cedi"/>
+
+            <Input id="inputValueLabelId2" placeholder="ID del catálogo al que pertenece"/>
+
+            <Input id="inputValueId2" placeholder="ID del valor"/>
+
+            <Input id="inputValue2" placeholder="Nombre del valor"/>
+
+            <Input id="inputAlias2" placeholder="Alias del valor"/>
+
+            <Input id="inputValueSequence2" placeholder="Secuencia"/>
+            
+            <Input id="inputValueImage2" placeholder="Url de la imagen"/>
+            
+            <Input id="inputValueDescription2" placeholder="Descripción del valor"/>
+
+        </VBox>
+
+        <beginButton>
+            <Button id="UpdateNewValue" text="Actualizar" type="Emphasized" press="onUpdateValueSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button id="CancelUpdateNewValue" text="Cancelar" press="onCloseUpdateValueDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

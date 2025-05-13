@@ -44,6 +44,18 @@
                         </m:ScrollContainer>
                     </m:Page>
 
+                    <m:Page id="page40" title="Catalogos">
+                        <m:ScrollContainer id="ScrollContainer40Catalogos" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView40CatalogosManageView" viewName="com.inv.sapfioriwebinvestments.view.Catalogs.pages.CatalogsManage"/>
+                        </m:ScrollContainer>
+                    </m:Page>
+
+                    <m:Page id="page50" title="Valores">
+                        <m:ScrollContainer id="ScrollContainer40Valores" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView40ValoresManageView" viewName="com.inv.sapfioriwebinvestments.view.Catalogs.pages.ValuesManage"/>
+                        </m:ScrollContainer>
+                    </m:Page>
+
                 </m:pages>
             </m:NavContainer>
         </tnt:mainContents>

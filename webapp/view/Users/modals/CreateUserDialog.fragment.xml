@@ -1,7 +1,7 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
     <Dialog
         id="CreateUserDialog"
-        title="Crear Nuevo Usuario"
+        title="Crear Usuario"
         icon="sap-icon://add"
         type="Message"
         class="customDialogSize"

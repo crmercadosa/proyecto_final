@@ -18,6 +18,9 @@
             placeholder="Buscar usuario..."
             liveChange="onSearchUser" 
         />
+
+        <m:Button id="RefreshUserTable" press="onRefresh" icon="sap-icon://restart" type="Transparent" tooltip="Refrescar tabla"/>
+
     </m:Toolbar>
 
     <tl:Table id="IdTable1UsersManageTable"
@@ -30,7 +33,7 @@
             enableColumnReordering="true"
             rowActionCount="2"
             busyIndicatorDelay="0"
-            visibleRowCount="15">
+            rowMode="{ui>/rowMode}">
 
          <tl:columns>
             <tl:Column id="IdColumnUserId" sortProperty="USERID" width="5rem" autoResizable="true" resizable="true">
@@ -95,5 +98,18 @@
                 </tl:template>
             </tl:Column>
         </tl:columns>
+
+        <tl:footer>
+            <m:OverflowToolbar id="OverFlowUsersManage">
+                <m:Label id="OberflowLabelUsersManage" text="Modo de filas" />
+                <m:SegmentedButton selectedKey="{ui>/rowMode}" id="rowModeSelector">
+                    <m:items>
+                        <m:SegmentedButtonItem id="IdUsersFixedButton" key="Fixed" icon="sap-icon://locked" />
+                        <m:SegmentedButtonItem id="IdUsersInteracctiveButton" key="Interactive" icon="sap-icon://resize-vertical" />
+                    </m:items>
+                </m:SegmentedButton>
+            </m:OverflowToolbar>
+        </tl:footer>
+
     </tl:Table>
 </mvc:View>

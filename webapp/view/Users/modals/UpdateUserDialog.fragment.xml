@@ -2,7 +2,7 @@
     <Dialog
         id="UpdateUserDialog"
         title="Actualizar Usuario"
-        icon="sap-icon://add"
+        icon="sap-icon://edit"
         type="Message"
         class="customDialogSize"
         draggable="true"

@@ -22,6 +22,12 @@ function (BaseController, JSONModel, BusyIndicator, MessageToast, MessageBox, Fr
         onInit: function () {
             this.savedUsers = []; // Copia de usuarios original para búsquedas
             this.loadUsers();     // Cargar usuarios al iniciar
+
+            // Modelo para RowMode UI
+            const oUIModel = new JSONModel({
+                rowMode: "Fixed" // Opciones: Fixed | Auto | Interactive
+            });
+            this.getView().setModel(oUIModel, "ui");
         },
 
 
@@ -51,7 +57,13 @@ function (BaseController, JSONModel, BusyIndicator, MessageToast, MessageBox, Fr
                     oModel.setData(data);
                     oTable.setModel(oModel);
                 })
-                .catch(err => MessageToast.show("Error al cargar usuarios: " + err.message))
+                .catch(err => {
+                    if(err.message === ("Cannot read properties of undefined (reading 'setModel')")){
+                        return;
+                    }else{
+                        MessageToast.show("Error al cargar usuarios: " + err.message);
+                    }      
+                })
                 .finally(() => BusyIndicator.hide());
         },
 
@@ -532,7 +544,14 @@ function (BaseController, JSONModel, BusyIndicator, MessageToast, MessageBox, Fr
             var UserData = oContext.getObject();
 
             this.selectedUser = UserData;
-        }
+        },
+
+        /**
+         * Refresca la tabla.
+         */
+        onRefresh: function(){
+            this.loadUsers();
+        }        
 
     });
 });

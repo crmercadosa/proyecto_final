@@ -32,10 +32,6 @@
             busyIndicatorDelay="0"
             visibleRowCount="15">
 
-        <tl:rowMode>
-            
-        </tl:rowMode>
-
          <tl:columns>
             <tl:Column id="IdColumnUserId" sortProperty="USERID" width="5rem" autoResizable="true" resizable="true">
                 <m:Label id="IdLabelUserId" text="USERID" />

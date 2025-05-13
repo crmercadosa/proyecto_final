@@ -6,40 +6,58 @@
     xmlns:tl="sap.ui.table"
 >
 
-     <m:Toolbar id="RolesManageToolBar" design="Transparent" >
-        <m:Button id="CreateRole" text="Crear" press="onCreate" type="Accept"/>
-        <m:Button id="UpdateRole" text="Actualizar" press="onUpdate" type="Emphasized"/>
-        <m:Button id="DeleteRole" text="Eliminar" press="onDelete" type="Reject"/>
+    <m:Toolbar id="RolesManageToolBar" design="Transparent" class="customRoleToolbar">
+        <m:Button id="CreateRole" text="Crear" press="onCreate" icon="sap-icon://add" type="Accept"/>
+        <m:Button id="UpdateRole" text="Actualizar" press="onUpdate" icon="sap-icon://edit" type="Emphasized"/>
+        <m:Button id="DeleteRole" text="Eliminar" press="onDelete" icon="sap-icon://delete" type="Reject"/>
 
-        <m:ToolbarSpacer id="IdRoleSpacer" />
 
         <m:SearchField 
             id="SearchRoleField" 
-            width="20rem"
+            width="25rem"
             placeholder="Buscar roles..."
             liveChange="onSearchRole" 
         />
 
+        <m:ToolbarSpacer id="IdRoleToolSpacer"/>
+
+        <m:Button id="Privileges" text="Privilegios" press="onPressPrivileges" icon="sap-icon://role" type="Emphasized"/>
+
     </m:Toolbar>
 
     <tl:Table id="IdTable1RolesManageTable"
-              rows="{/value/0/data/0/dataRes}"
+              rows="{/value/0/roles}"
               selectionMode="Single"
               alternateRowColors="true"
               selectionBehavior="RowOnly"
+              rowSelectionChange="onRoleRowSelected"
               enableSelectAll="false"
               enableColumnReordering="true"
               rowActionCount="2"
               busyIndicatorDelay="0"
+              visibleRowCount="15"
               >
 
          <tl:columns>
-            <tl:Column id="IdColumnRoleId" sortProperty="RoleID" width="5rem" autoResizable="true" resizable="true">
+            <tl:Column id="IdColumnRoleId" sortProperty="RoleID" width="20%" autoResizable="true" resizable="true">
                 <m:Label id="IdLabelRoleId" text="RoleID" />
                 <tl:template>
-                    <m:Text id="IdTextRoleIdt" text="{RoleID}" wrapping="false"/>
+                    <m:Text id="IdTextRoleId" text="{RoleID}" wrapping="false"/>
                 </tl:template>
             </tl:Column>
+            <tl:Column id="IdColumnRoleName" sortProperty="RoleName" width="25%" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelRoleName" text="RoleName" />
+                <tl:template>
+                    <m:Text id="IdTextRoleName" text="{RoleName}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+            <tl:Column id="IdColumnDescription" sortProperty="Description" width="55%" autoResizable="true" resizable="true">
+                <m:Label id="IdLabelDescription" text="Description" />
+                <tl:template>
+                    <m:Text id="IdTextDescription" text="{Description}" wrapping="false"/>
+                </tl:template>
+            </tl:Column>
+
         </tl:columns>
     </tl:Table>
 </mvc:View>

@@ -19,11 +19,7 @@
             <f:profile>
                 <m:Avatar id="IdAvatar1Usuarios" initials="UI" press="onAvatarPress"/>
             </f:profile>
-
-            <m:Popover id="profilePopover" placement="Bottom" showHeader="false">
-                <m:Button id="IdProfileLogoutButton" text="Cerrar sesión" press="onLogoutPress"/>
-             </m:Popover>
-
+            
             </f:ShellBar>
         </tnt:header>        
 

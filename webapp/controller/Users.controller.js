@@ -10,7 +10,6 @@ sap.ui.define([
             var oModel = new JSONModel();
             oModel.loadData("./resources/jsons/securityNavItems.json"); 
             this.getView().setModel(oModel, "usersNavModel");
-
              // También podrías manejar el estado inicial del NavContainer aquí si es necesario
             this.oNavContainer = this.byId("IdNavContainer1Users");
 
@@ -41,14 +40,37 @@ sap.ui.define([
         },
 
         onAvatarPress: function () {
-            var oPopover = this.byId("profilePopover");
-            oPopover.openBy(this.byId("IdAvatar1Usuarios")); // Abre el popover junto al avatar
-        },
+            let oMyAvatar = this.getView().byId("IdAvatar1Usuarios");
 
-        // Maneja la acción cuando se presiona "Cerrar sesión"
-        onLogoutPress: function () {
-            // Aquí implementas la lógica para cerrar sesión, como eliminar el token de sesión, redirigir a la pantalla de login, etc.
-            MessageToast.show("Cerrando sesión");
+            oMyAvatar.setActive(!oMyAvatar.getActive());
+
+            // Create a popover with the menu
+            let oPopover = new sap.m.Popover({
+                title: "Opciones",
+                placement: sap.m.PlacementType.Bottom,
+                afterClose: function () {
+                    oMyAvatar.setActive(false);
+                },
+                content: new sap.m.List({
+                    items: [
+                        new sap.m.StandardListItem({
+                            title: "Cerrar sesión",
+                            icon: "sap-icon://log",
+                            type: sap.m.ListType.Active,
+                            press: function () {
+                                // this.clearSession();
+                                oPopover.close();
+                                oMyAvatar.setActive(false);
+                                // this.getRouter().navTo("RouteLogin", {}, true /*no history*/);
+                                MessageToast.show("Cerrando sesión");
+                            }
+                        })
+                    ]
+                })
+            });
+
+            // Open the popover
+            oPopover.openBy(oMyAvatar);
         }
 
     });

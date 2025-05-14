@@ -11,7 +11,6 @@
         <m:Button id="UpdateRole" text="Actualizar" press="onUpdate" icon="sap-icon://edit" type="Emphasized"/>
         <m:Button id="DeleteRole" text="Eliminar" press="onDelete" icon="sap-icon://delete" type="Reject"/>
 
-
         <m:SearchField 
             id="SearchRoleField" 
             width="25rem"
@@ -22,11 +21,10 @@
         <m:ToolbarSpacer id="IdRoleToolSpacer"/>
 
         <m:Button id="Privileges" text="Privilegios" press="onPressPrivileges" icon="sap-icon://role" type="Emphasized"/>
-
     </m:Toolbar>
 
     <tl:Table id="IdTable1RolesManageTable"
-              rows="{/value/0/roles}"
+              rows="{/roles}"
               selectionMode="Single"
               alternateRowColors="true"
               selectionBehavior="RowOnly"
@@ -36,28 +34,26 @@
               rowActionCount="2"
               busyIndicatorDelay="0"
               visibleRowCount="15"
-              >
-
-         <tl:columns>
-            <tl:Column id="IdColumnRoleId" sortProperty="RoleID" width="20%" autoResizable="true" resizable="true">
+    >
+        <tl:columns>
+            <tl:Column id="IdColumnRoleId" sortProperty="ROLEID" width="20%" autoResizable="true" resizable="true">
                 <m:Label id="IdLabelRoleId" text="RoleID" />
                 <tl:template>
-                    <m:Text id="IdTextRoleId" text="{RoleID}" wrapping="false"/>
+                    <m:Text id="IdTextRoleId" text="{ROLEID}" wrapping="false"/>
                 </tl:template>
             </tl:Column>
-            <tl:Column id="IdColumnRoleName" sortProperty="RoleName" width="25%" autoResizable="true" resizable="true">
+            <tl:Column id="IdColumnRoleName" sortProperty="ROLENAME" width="25%" autoResizable="true" resizable="true">
                 <m:Label id="IdLabelRoleName" text="RoleName" />
                 <tl:template>
-                    <m:Text id="IdTextRoleName" text="{RoleName}" wrapping="false"/>
+                    <m:Text id="IdTextRoleName" text="{ROLENAME}" wrapping="false"/>
                 </tl:template>
             </tl:Column>
-            <tl:Column id="IdColumnDescription" sortProperty="Description" width="55%" autoResizable="true" resizable="true">
+            <tl:Column id="IdColumnDescription" sortProperty="DESCRIPTION" width="55%" autoResizable="true" resizable="true">
                 <m:Label id="IdLabelDescription" text="Description" />
                 <tl:template>
-                    <m:Text id="IdTextDescription" text="{Description}" wrapping="false"/>
+                    <m:Text id="IdTextDescription" text="{DESCRIPTION}" wrapping="false"/>
                 </tl:template>
             </tl:Column>
-
         </tl:columns>
     </tl:Table>
 </mvc:View>

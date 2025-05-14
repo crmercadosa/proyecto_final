@@ -1,0 +1,32 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog id="CreateRoleDialog"
+            title="Crear nuevo rol"
+            draggable="true"
+            resizable="true"
+            contentWidth="400px"
+            contentHeight="auto"
+            stretchOnPhone="true">
+
+        <VBox class="sapUiSmallMargin">
+
+            <Label text="ID del Rol" labelFor="inputRoleID"/>
+            <Input id="inputRoleID" placeholder="Ej. ROLE001" required="true"/>
+
+            <Label text="Nombre del Rol" labelFor="inputRoleName"/>
+            <Input id="inputRoleName" placeholder="Ej. Administrador" required="true"/>
+
+            <Label text="Descripción" labelFor="inputRoleDescription"/>
+            <TextArea id="inputRoleDescription" placeholder="Describe este rol..." rows="4"/>
+        </VBox>
+
+        <beginButton>
+            <Button text="Crear" type="Accept" press="onCreateRoleSubmit"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancelar" type="Reject" press="onCloseCreateRoleDialog"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -37,7 +37,9 @@ sap.ui.define([
                 case "page50":
                     this.oNavContainer.to(this.byId("page50"));
                     break;
-                // Agregar más casos si tienes más páginas
+                case "page60":
+                    this.oNavContainer.to(this.byId("page60"));
+                    break;
             }
         },
 

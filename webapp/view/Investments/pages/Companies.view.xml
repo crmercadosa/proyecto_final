@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="com.inv.sapfioriwebinvestments.controller.Investments.pages.Companies"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <!-- Barra de búsqueda tipo subheader -->
+    <m:Toolbar id="CompaniesToolBar" design="Transparent" class="customCompaniesToolbar">
+        <m:SearchField 
+            id="searchField" 
+            width="100%" 
+            placeholder="Buscar compañía por nombre o símbolo..." 
+            search=".onSearch"
+        />
+    </m:Toolbar>
+
+    <!-- Lista de compañías -->
+    <m:List 
+        id="companyList" 
+        items="{path: 'CompaniesModel>/symbols'}"
+        mode="SingleSelectMaster" 
+        growing="true" 
+        growingScrollToLoad="true" 
+        itemPress=".onCompanyPress"
+    >
+        <m:ObjectListItem 
+            id="_IDGenObjectListItem" 
+            title="{CompaniesModel>name}" 
+            number="{CompaniesModel>symbol}" 
+            numberUnit="Símbolo" 
+            type="Active" 
+            icon="sap-icon://factory" 
+            intro="Disponible para simulación" 
+            press=".onCompanyPress"
+        />
+    </m:List>
+</mvc:View>

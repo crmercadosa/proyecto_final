@@ -149,10 +149,12 @@ function (BaseController, JSONModel, BusyIndicator, MessageToast, MessageBox, Fr
 
         },
 
+
+
         /**
          * Función de cancelar, cierra la modal de create value.
          */
-        onCloseCreateCatalogDialog: function () {
+        onCloseCreateValueDialog: function () {
             this._oCreateValueDialog.close();
         },
 

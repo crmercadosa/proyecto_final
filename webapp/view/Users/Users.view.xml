@@ -11,7 +11,7 @@
         <tnt:header>
             <f:ShellBar
                 id="IdShellBar1Users"
-                title="SECURITY"
+                title="PROYECTO FINAL"
                 homeIcon="./resources/images/logo.png"
                 showMenuButton="true"
                 menuButtonPressed="onMenuButtonPress"
@@ -51,8 +51,14 @@
                     </m:Page>
 
                     <m:Page id="page50" title="Valores">
-                        <m:ScrollContainer id="ScrollContainer40Valores" horizontal="false" vertical="true" height="100%">
-                            <mvc:XMLView id="XMLView40ValoresManageView" viewName="com.inv.sapfioriwebinvestments.view.Catalogs.pages.ValuesManage"/>
+                        <m:ScrollContainer id="ScrollContainer50Valores" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView50ValoresManageView" viewName="com.inv.sapfioriwebinvestments.view.Catalogs.pages.ValuesManage"/>
+                        </m:ScrollContainer>
+                    </m:Page>
+
+                    <m:Page id="page60" title="Compañías disponibles">
+                        <m:ScrollContainer id="ScrollContainer60Inversiones" horizontal="false" vertical="true" height="100%">
+                            <mvc:XMLView id="XMLView60InversionesManageView" viewName="com.inv.sapfioriwebinvestments.view.Investments.pages.Companies"/>
                         </m:ScrollContainer>
                     </m:Page>
 
